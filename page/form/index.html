@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a Form</title>
+
+  <!-- Bootstrap & Font Awesome -->
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/style/create.css" />
+  <link rel="stylesheet" href="/style/navbar.css" />
+
+  <style>
+    .navbar-brand img.logo {
+      max-height: 50px;
+    }
+    .nav-link.btn {
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .dropdown-menu {
+      min-width: 160px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold d-flex align-items-center text-primary" href="/page/dashboard/index.html">
+        <img src="/src/image/TTG - Copy.png" alt="Logo" class="logo me-2" />
+        <span>GenZDiv</span>
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Menu -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+
+          <!-- Help Button -->
+          <li class="nav-item">
+            <button type="button" class="btn btn-outline-primary d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fa-solid fa-circle-question me-2"></i>HELP
+            </button>
+          </li>
+
+          <!-- Profile Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/src/icon/twitter-line.svg" alt="twitter-line" class="rounded-circle border profile-img" />
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HELP Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-circle-info me-2"></i>How to Use the Form</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Use this interactive <strong>Drag & Drop Form</strong> to easily compose a formal request for assistance.
+            Simply drag elements such as <strong>Name, Address, Reason for Help, Supporting Documents, and Signature</strong> into the workspace.
+          </p>
+          <p>
+            You can <strong>edit fields</strong>, rearrange them, and preview your final letter before submission.
+          </p>
+          <hr>
+          <p><strong>This tool is perfect for:</strong></p>
+          <ul>
+            <li>Submitting requests to authorities or organizations</li>
+            <li>Applying for personal or financial aid</li>
+            <li>Reporting issues or requesting support</li>
+          </ul>
+          <hr>
+          <p><strong>Instructions:</strong></p>
+          <ol>
+            <li>Drag elements from the sidebar into the letter area.</li>
+            <li>Click on any element to edit its content.</li>
+            <li>Use the preview button to review your letter.</li>
+            <li>Submit or download the letter when complete.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle -->
+   <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

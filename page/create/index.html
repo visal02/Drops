@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create a Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="/style/create.css">
+</head>
+<body>
+
+  <!-- Close Button -->
+  <a href="/page/dashboard/index.html" class="text-decoration-none">
+    <div class="close-button" title="Close">
+      <i class="fas fa-times"></i>
+    </div>
+  </a>
+
+  <!-- Form Selection Section -->
+  <section class="form-section">
+    <div class="container">
+      <h2>Create a New Form</h2>
+      <p>Start collecting data with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows. Choose from our templates or create your own.</p>
+
+      <div class="row justify-content-center g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card card-option h-100" onclick="location.href='#';">
+            <div class="badge-new">Popular</div>
+            <a href="/page/templates/index.html">
+             <img src="/src/image/img-form.jpg" class="card-img-top" alt="img-form"/>
+            </a>
+            <div class="card-body">
+                <a href="/page/templates/index.html">
+                 <h5 class="card-title">Use Template</h5>
+                </a>
+              <p class="card-text text-muted">Choose from hundreds of professional templates</p>
+              <div class="mt-3">
+                <span class="badge bg-primary me-1">Survey</span>
+                <span class="badge bg-success me-1">Contact</span>
+                <span class="badge bg-info">Feedback</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card card-option h-100" onclick="location.href='#';">
+            <img src="/src/image/t-shirt.png" class="card-img-top" alt="T-shirt" />
+            <div class="card-body">
+              <h5 class="card-title">T-shirt Order</h5>
+              <p class="card-text text-muted">Customize and convert your T-shirt order form</p>
+              <div class="mt-3">
+                <span class="badge bg-warning text-dark">E-commerce</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card card-option h-100" onclick="location.href='#';">
+            <img src="/src/image/resignation-letter-icon-employee-resign-vector-53817132.jpg" class="card-img-top" alt="Resignation" />
+            <div class="card-body">
+              <h5 class="card-title">Resignation</h5>
+              <p class="card-text text-muted">Professional resignation form with HR workflow</p>
+              <div class="mt-3">
+                <span class="badge bg-secondary">HR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 4 - New Option -->
+        <div class="col-lg-3 col-md-6">
+          <div class="card card-option h-100" onclick="location.href='#';">
+            <img src="https://cdn-icons-png.flaticon.com/512/3592/3592357.png" class="card-img-top" alt="Blank Form" />
+            <div class="card-body">
+              <h5 class="card-title">Blank Form</h5>
+              <p class="card-text text-muted">Start from scratch with our form builder</p>
+              <div class="mt-3">
+                <span class="badge bg-dark">Custom</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+     
+  </section>
+
+  <!-- Bootstrap & Custom JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/scripts/create.js"></script>
+</body>
+</html>

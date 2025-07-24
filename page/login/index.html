@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Auth System</title>
+  <link rel="stylesheet" href="/style/login.css">
+</head>
+<body>
+  <!-- Login Form -->
+  <form id="loginForm" class="form-box active">
+    <h2>Login</h2>
+    <div id="loginError" class="error-message"></div>
+    <div id="loginSuccess" class="success-message"></div>
+    
+    <label for="loginEmail">Email:</label>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    
+    <label for="loginPass">Password:</label>
+    <div class="password-container">
+      <input type="password" id="loginPass" placeholder="Password" required>
+      <span class="password-toggle" onclick="togglePassword('loginPass')">👁️</span>
+    </div>
+    
+    <button type="button" onclick="handleLogin()" class="auth-button">Login</button>
+    
+    <p><a onclick="showForm('forgotForm')">Forgot password?</a></p>
+    <p>Don't have an account? <a onclick="showForm('registerForm')">Register here</a></p>
+  </form>
+
+  <!-- Register Form -->
+  <form id="registerForm" class="form-box">
+    <h2>Register</h2>
+    <div id="regError" class="error-message"></div>
+    <div id="regSuccess" class="success-message"></div>
+    
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" placeholder="First Name" required>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" placeholder="Last Name" required>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select Gender</option>
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+    </select>
+    
+    <label for="dob">Date of birth:</label>
+    <input type="date" id="dob" required>
+    
+    <label for="regEmail">Email:</label>
+    <input type="email" id="regEmail" placeholder="Email" required>
+    
+    <label for="regPass">Password:</label>
+    <div class="password-container">
+      <input type="password" id="regPass" placeholder="Password" required>
+      <span class="password-toggle" onclick="togglePassword('regPass')">👁️</span>
+    </div>
+    
+    <label for="confirmPass">Confirm Password:</label>
+    <div class="password-container">
+      <input type="password" id="confirmPass" placeholder="Confirm Password" required>
+      <span class="password-toggle" onclick="togglePassword('confirmPass')">👁️</span>
+    </div>
+    
+    <button type="button" onclick="handleRegistration()" class="auth-button">Register</button>
+    <p>Already have an account? <a onclick="showForm('loginForm')">Login here</a></p>
+  </form>
+
+  <!-- Forgot Password Form -->
+  <form id="forgotForm" class="form-box">
+    <h2>Forgot Password</h2>
+    <div id="forgotError" class="error-message"></div>
+    <div id="forgotSuccess" class="success-message"></div>
+    
+    <label for="forgotEmail">Email:</label>
+    <input type="email" id="forgotEmail" placeholder="Email" required>
+    
+    <button type="button" onclick="handleForgotPassword()" class="auth-button">Send Reset Link</button>
+    <p><a onclick="showForm('loginForm')">Back to Login</a></p>
+  </form>
+
+  <script src="/scripts/login.js"></script>
+</body>
+</html>

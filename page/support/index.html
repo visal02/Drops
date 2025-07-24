@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Support</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style/navbar.css">
+  <link rel="stylesheet" href="/style/support.css">
+
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="/index.html">
+        <img class="logo" src="/src/image/TTG - Copy.png" alt="Logo" width="100"> 
+        <span class="d-none d-sm-inline">GenZDiv</span>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/page/templates/index.html">Templates</a></li>
+        <li class="nav-item"><a class="nav-link" href="/page/support/index.html">Support</a></li>
+        <li class="nav-item"><a class="nav-link" href="/page/price/index.html">Pricing</a></li>
+     
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-container">
+    <div class="support-container">
+      <h2>Contact Support</h2>
+      <p class="text-center mb-4" style="color: #666;">We're here to help! Fill out the form below and our team will get back to you as soon as possible.</p>
+
+      <div id="successMessage" class="success-message">
+        <i class="fas fa-check-circle me-2"></i>
+        Your message has been sent successfully! We'll get back to you soon.
+      </div>
+
+      <form id="supportForm">
+        <div class="form-group">
+          <label for="name" class="required">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+          <div id="nameError" class="error">
+            <i class="fas fa-exclamation-circle me-2"></i>Please enter your name
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="required">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email address" required>
+          <div id="emailError" class="error">
+            <i class="fas fa-exclamation-circle me-2"></i>Please enter a valid email address
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="issueType">Type of Issue</label>
+          <select id="issueType">
+            <option value="">Select an issue type</option>
+            <option value="technical">Technical Problem</option>
+            <option value="account">Account Issue</option>
+            <option value="billing">Billing Question</option>
+            <option value="feature">Feature Request</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="required">How can we help?</label>
+          <div class="toolbar">
+            <button type="button" onclick="format('bold')" title="Bold"><i class="fas fa-bold"></i></button>
+            <button type="button" onclick="format('italic')" title="Italic"><i class="fas fa-italic"></i></button>
+            <button type="button" onclick="format('underline')" title="Underline"><i class="fas fa-underline"></i></button>
+            <button type="button" onclick="format('insertOrderedList')" title="Numbered List"><i class="fas fa-list-ol"></i></button>
+            <button type="button" onclick="format('insertUnorderedList')" title="Bulleted List"><i class="fas fa-list-ul"></i></button>
+            <button type="button" onclick="format('createLink')" title="Insert Link"><i class="fas fa-link"></i></button>
+            <button type="button" onclick="format('undo')" title="Undo"><i class="fas fa-undo"></i></button>
+            <button type="button" onclick="format('redo')" title="Redo"><i class="fas fa-redo"></i></button>
+          </div>
+
+          <div id="editor" contenteditable="true" data-placeholder="Describe your issue here..."></div>
+          <div id="editorError" class="error">
+            <i class="fas fa-exclamation-circle me-2"></i>Please describe your issue
+          </div>
+          <div class="character-count"><span id="charCount">0</span>/2000 characters</div>
+        </div>
+
+        <div class="form-group">
+          <label for="link">Related URL (if any)</label>
+          <input type="url" id="link" placeholder="http://example.com">
+          <div id="linkError" class="error">
+            <i class="fas fa-exclamation-circle me-2"></i>Please enter a valid URL
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="screenshot">Upload screenshot (optional)</label>
+          <div class="file-upload-container">
+            <label for="screenshot" class="file-upload-label">
+              <i class="fas fa-cloud-upload-alt"></i> Choose a file or drag it here
+            </label>
+            <input type="file" id="screenshot" accept="image/*">
+            <div id="file-name">No file chosen</div>
+            <div id="fileError" class="error">
+              <i class="fas fa-exclamation-circle me-2"></i>Maximum file size is 5MB
+            </div>
+          </div>
+
+          <div class="image-preview-container" id="imagePreviewContainer">
+            <div>Image Preview:</div>
+            <img id="imagePreview" class="image-preview" src="#" alt="Preview">
+            <button type="button" class="remove-image-btn" id="removeImageBtn">
+              <i class="fas fa-trash me-2"></i>Remove Image
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-container">
+            <input type="checkbox" id="private">
+            <label for="private">Make this request private (only visible to support agents)</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" id="subscribe" checked>
+            <label for="subscribe">Subscribe to updates about this issue</label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane me-2"></i>Submit Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="text-white pt-5 pb-4 footer">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <!-- Column 1 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">GenZDiv</h6>
+          <p class="footer-link">Create forms</p>
+          <p class="footer-link">MyWorkspace</p>
+          <p class="footer-link">Pricing</p>
+          <p class="footer-link">Templates</p>
+        </div>
+        <!-- Column 2 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Marketplace</h6>
+          <p class="footer-link">Templates</p>
+          <p class="footer-link">Widgets</p>
+          <p class="footer-link">Integrations</p>
+          <p class="footer-link">API Documentation</p>
+        </div>
+        <!-- Column 3 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Support</h6>
+          <p class="footer-link">Contact Us</p>
+          <p class="footer-link">User Guide</p>
+          <p class="footer-link">Help Center</p>
+          <p class="footer-link">Community Forum</p>
+        </div>
+        <!-- Column 4 -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Company</h6>
+          <p class="footer-link">About Us</p>
+          <p class="footer-link">Media Kit</p>
+          <p class="footer-link">In the News</p>
+          <p class="footer-link">Careers</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Secondary Footer -->
+  <footer class="bg-secondary text-white py-3 footer-2">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Copyright -->
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-0 small">© 2025 GenZDiv. All rights reserved.</p>
+        </div>
+        <!-- Links -->
+        <div class="col-md-3 d-flex flex-wrap justify-content-center justify-content-md-end gap-3 mb-3 mb-md-0">
+          <a href="#" class="text-white text-decoration-none small">Terms & Conditions</a>
+          <a href="#" class="text-white text-decoration-none small">Privacy Policy</a>
+          <a href="#" class="text-white text-decoration-none small">Security</a>
+        </div>
+        <!-- Social Icons -->
+        <div class="col-md-3 text-center text-md-end">
+          <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/scripts/support.js"></script>
+</body>
+</html>
