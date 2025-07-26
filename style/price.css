@@ -1,0 +1,185 @@
+ :root {
+      --blue: #0d6dfc;
+      --danger: #dc3545;
+      --black: #212529;
+      --blackw:#6b757d;
+      --w:#f7f9fa;
+    }
+  /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .Features {
+      color: var(--blue);
+    }
+    
+    .header {
+      border: 100px;
+    }
+    
+    .save {
+      background-color: var(--blue);
+    }
+    
+    .save-50 {
+      font-size: 60px;
+      font-weight: bold;
+      font-family: arial;
+    }
+    
+    .sign-up {
+      border: none;
+      border-radius: 5px;
+      padding: 10px 30px;
+      font-weight: bold;
+      font-family: arial;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      background-color: var(--danger);
+      color: var(--w);
+    }
+    
+    .sign-up:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px var(--danger);
+      background-color: var(--danger);
+      color: var(--w);
+    }
+    
+    .p-offer {
+      font-size: smaller;
+      color: var(--black);
+    }
+    
+    .SUMMER-SALE {
+      color: var(--black);
+    }
+    
+    .btn-group {
+      background-color: rgb(213, 212, 212);
+      width: 250px;
+      border-radius: 30px;
+    }
+    .btn-group-vertical{
+      background-color: var(--blackw);
+    }
+    
+    .Monthly,
+    .Yearly {
+      font-weight: bold;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-toggle {
+      background-color: #0d6efd;
+      color: white;
+    }
+    
+    /* Pricing Cards */
+    .starter,
+    .Bronze,
+    .Silver,
+    .Gold {
+      font-weight: bold;
+      font-size: 30px;
+      background-color: var(--w);
+      transition: all 0.3s ease;
+    }
+    
+    .Bronze {
+      background-color: var(--blue);
+    }
+    
+    .Silver {
+      background-color: var(--danger);
+    }
+    
+    #Golds {
+      background-color: var(--blackw);
+      border: #6b757d;
+    }
+    
+    .free {
+      background-color: rgb(66, 65, 65);
+      padding: 30px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .font-free {
+      color: var(--w);
+    }
+    
+    .font-all {
+      color: rgb(176, 176, 176);
+    }
+    
+    .form {
+      background-color: rgb(39, 39, 39);
+      transition: all 0.3s ease;
+    }
+    
+    .font-form {
+      color: var(--w);
+      font-weight: bold;
+    }
+    
+    .form-limit {
+      color: rgb(204, 188, 206);
+      font-weight: bold;
+    }
+    
+    .btn-a,
+    .btn-b,
+    .btn-c,
+    .btn-d {
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .btn-b {
+      background-color: var(--blue);
+    }
+    
+    .btn-c {
+      background-color: var(--danger);
+    }
+    
+    .btn-d {
+      background-color: var(--blackw);
+    }
+    
+    .btn-a:hover,
+    .btn-b:hover,
+    .btn-c:hover,
+    .btn-d:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0.9;
+    }
+    
+    .pricing-col {
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .pricing-col:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+   #Golds:hover{
+      background-color: var(--blackw);
+    border: #0d6efd;
+   }
+   .text-b{
+    color: var(--blue);
+   }

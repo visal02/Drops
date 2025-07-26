@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Grid Fix</title>
+  
+   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/style/navbar.css">
+  <link rel="stylesheet" href="/style/price.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="/index.html">
+        <img class="logo" src="/src/image/TTG - Copy.png" alt="Logo" width="100"> 
+        <span class="d-none d-sm-inline">GenZDiv</span>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/page/templates/index.html">Templates</a></li>
+          <li class="nav-item"><a class="nav-link" href="/page/support/index.html">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="/page/price/index.html">Pricing</a></li>
+       
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container text-center mt-5 header">
+    <h1 class="Features">Features and Pricing</h1>
+    <h6>Trusted by over 30 million users</h6>
+  </div>
+  
+  <section class="save">
+    <div class="container text-center mt-5"> 
+      <h5 class="SUMMER-SALE">SUMMER SALE</h5>
+      <h2 class="save-50"> SAVE 50%</h2>
+      <button class=" sign-up">Sign Up To See Deals</button>
+      <p class="p-offer">Offer does not apply to Jotform Enterprise</p>
+    </div>
+  </section>
+  
+  <section class="container text-center mt-5 but-M-Y">
+    <div class="">
+      <div class="btn-group">
+        <button id="monthlyBtn" class="btn btn-primary btn-toggle Monthly">Monthly</button>
+        <button id="yearlyBtn" class="btn Yearly">Yearly</button>
+      </div>
+      <h5 class="text-b">Save up to 20%</h5>
+    </div>
+  </section>
+  
+  <section class="hero">
+    <div class="container text-center">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Starter Plan -->
+        <div class="col pricing-col">
+          <div class="btn-group-vertical col-12" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline- starter">Starter</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline- free">
+              <h3 class="font-free monthly-pricing">FREE</h3>
+              <h3 class="font-free yearly-pricing">FREE</h3>
+              <h6 class="font-all">* All Features Included</h6>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-border-color-rgb form">
+              <h6 class="font-form">5 forms</h6>
+              <p class="form-limit">form Limit</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">100</h6>
+              <p class="form-limit">Monthly Submissions</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1 User</h6>
+              <p class="form-limit">Per Team</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">100 MB</h6>
+              <p class="form-limit">Available Space</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1,000</h6>
+              <p class="form-limit">Monthly Form Viwes</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">500</h6>
+              <p class="form-limit">Tatal Submission Storage</p>
+            </label>
+          </div>
+          <div class="container">
+            <button class="btn-a">Get Started</button>
+          </div>  
+        </div>
+        
+        <!-- Bronze Plan -->
+        <div class="col pricing-col">
+          <div class="btn-group-vertical col-12" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline- Bronze">Bronze</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline- free">
+              <h3 class="font-free monthly-pricing">$39/month</h3>
+              <h3 class="font-free yearly-pricing">$34/month</h3>
+              <h6 class="font-all yearly-pricing">Billed annually</h6>
+              <h6 class="font-all monthly-pricing">Billed monthly</h6>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline- form">
+              <h6 class="font-form">25 forms</h6>
+              <p class="form-limit">form Limit</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1,000</h6>
+              <p class="form-limit">Monthly Submissions</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1 User</h6>
+              <p class="form-limit">Per Team</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1 GB</h6>
+              <p class="form-limit">Available Space</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">10,000</h6>
+              <p class="form-limit">Monthly Form Viwes</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">10,000</h6>
+              <p class="form-limit">Tatal Submission Storage</p>
+            </label>
+          </div>
+          <div class="container">
+            <button class="btn-b">Get Started</button>
+          </div>
+        </div>
+        
+        <!-- Silver Plan -->
+        <div class="col pricing-col">
+          <div class="btn-group-vertical col-12" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline- Silver">Silver</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline free">
+              <h3 class="font-free monthly-pricing">$45/month</h3>
+              <h3 class="font-free yearly-pricing">$39/month</h3>
+              <h6 class="font-all yearly-pricing">Billed annually</h6>
+              <h6 class="font-all monthly-pricing">Billed monthly</h6>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline- form">
+              <h6 class="font-form">50 forms</h6>
+              <p class="form-limit">form Limit</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">2,500</h6>
+              <p class="form-limit">Monthly Submissions</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1 User</h6>
+              <p class="form-limit">Per Team</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">10 GB</h6>
+              <p class="form-limit">Available Space</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">100,000</h6>
+              <p class="form-limit">Monthly Form Viwes</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">25,000</h6>
+              <p class="form-limit">Tatal Submission Storage</p>
+            </label>
+          </div>
+          <div class="container">
+            <button class="btn-c">Get Started</button>
+          </div>
+        </div>
+        
+        <!-- Gold Plan -->
+        <div class="col pricing-col">
+          <div class="btn-group-vertical col-12" role="group" aria-label="Vertical radio toggle button group">
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+            <label class="btn btn-outline-info Gold" id="Golds">Gold</label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+            <label class="btn btn-outline free">
+              <h3 class="font-free monthly-pricing">$119/month</h3>
+              <h3 class="font-free yearly-pricing">$99/month</h3>
+              <h6 class="font-all yearly-pricing">Billed annually</h6>
+              <h6 class="font-all monthly-pricing">Billed monthly</h6>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline form">
+              <h6 class="font-form">100 forms</h6>
+              <p class="form-limit">form Limit</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">10,000</h6>
+              <p class="form-limit">Monthly Submissions</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1 User</h6>
+              <p class="form-limit">Per Team</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">100 GB</h6>
+              <p class="form-limit">Available Space</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">1,000,000</h6>
+              <p class="form-limit">Monthly Form Viwes</p>
+            </label>
+            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+            <label class="btn btn-outline-secondary form">
+              <h6 class="font-form">100,000</h6>
+              <p class="form-limit">Tatal Submission Storage</p>
+            </label>
+          </div>
+          <div class="container">
+            <button class="btn-d">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Main Footer -->
+<footer class="text-white pt-5 pb-4 footer">
+  <div class="container text-center text-md-start">
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h6 class="text-uppercase fw-bold mb-4">GenZDiv</h6>
+        <p class="footer-link">Create forms</p>
+        <p class="footer-link">MyWorkspace</p>
+        <p class="footer-link">Pricing</p>
+        <p class="footer-link">Templates</p>
+      </div>
+      <!-- Column 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h6 class="text-uppercase fw-bold mb-4">Marketplace</h6>
+        <p class="footer-link">Templates</p>
+        <p class="footer-link">Widgets</p>
+        <p class="footer-link">Integrations</p>
+        <p class="footer-link">API Documentation</p>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h6 class="text-uppercase fw-bold mb-4">Support</h6>
+        <p class="footer-link">Contact Us</p>
+        <p class="footer-link">User Guide</p>
+        <p class="footer-link">Help Center</p>
+        <p class="footer-link">Community Forum</p>
+      </div>
+      <!-- Column 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h6 class="text-uppercase fw-bold mb-4">Company</h6>
+        <p class="footer-link">About Us</p>
+        <p class="footer-link">Media Kit</p>
+        <p class="footer-link">In the News</p>
+        <p class="footer-link">Careers</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Secondary Footer -->
+<footer class="bg-secondary text-white py-3 footer-2">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Copyright -->
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <p class="mb-0 small">© 2025 GenZDiv. All rights reserved.</p>
+      </div>
+      <!-- Links -->
+      <div class="col-md-3 d-flex flex-wrap justify-content-center justify-content-md-end gap-3 mb-3 mb-md-0">
+        <a href="#" class="text-white text-decoration-none small">Terms & Conditions</a>
+        <a href="#" class="text-white text-decoration-none small">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none small">Security</a>
+      </div>
+      <!-- Social Icons -->
+      <div class="col-md-3 text-center text-md-end">
+        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/scripts/price.js"></script>
+</body>
+</html>

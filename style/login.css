@@ -1,0 +1,158 @@
+ :root {
+      --blue: #0d6dfc;
+      --danger: #dc3545;
+      --black: #212529;
+      --blackw: #6b757d;
+      --w: #f7f9fa;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4 url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+    
+    .form-box {
+      width: 350px;
+      background: var(--black);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--blue);
+    }
+    
+    .form-box.active {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 15px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background: var(--black);
+      color: var(--w);
+    }
+    
+    label {
+      color: var(--w);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .auth-button {
+      width: 100%;
+      background: var(--blue);
+      color: var(--w);
+      padding: 12px;
+      border: none;
+      margin-top: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .auth-button:hover {
+      background: #0a5bd8;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .auth-button:active {
+      transform: translateY(0);
+    }
+    
+    .auth-button:focus {
+      outline: 2px solid rgba(13, 109, 252, 0.5);
+      outline-offset: 2px;
+    }
+    
+    a {
+      color: var(--w);
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      color: var(--blackw);
+    }
+    
+    h2, p {
+      color: var(--w);
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    
+    .error-message {
+      color: var(--danger);
+      font-size: 14px;
+      margin: -10px 0 10px;
+      display: none;
+    }
+    
+    .success-message {
+      color: #4BB543;
+      font-size: 14px;
+      margin: 10px 0;
+      text-align: center;
+      display: none;
+    }
+    
+    .password-container {
+      position: relative;
+    }
+    
+    .password-toggle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: var(--blue);
+      font-size: 14px;
+      user-select: none;
+    }
+    
+    /* Style for select dropdown */
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+    }
