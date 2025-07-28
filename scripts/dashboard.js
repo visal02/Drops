@@ -22,7 +22,7 @@ function addLabel() {
 
     const newItem = document.createElement("li");
     newItem.innerHTML = `
-      <a href="#"><i class="bi bi-tag-fill" style="color: ${labelColor}"></i> ${labelValue}</a>
+      <a class="d-flex justify-content-between align-items-center" href="#"><p><i class="bi bi-tag-fill" style="color: ${labelColor}"></i> ${labelValue}</p><i class="bi bi-three-dots-vertical right-1 icon-tree-dots"></i></a>
     `;
     const allLi = labelList.querySelectorAll("li");
     const addBtnLi = Array.from(allLi).find(li => li.querySelector("button"));

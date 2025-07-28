@@ -84,10 +84,12 @@
     .Gold {
       font-weight: bold;
       font-size: 30px;
-      background-color: var(--w);
+      color: var(--w);
       transition: all 0.3s ease;
     }
-    
+    .starter{
+      background-color: var(--black);
+    }
     .Bronze {
       background-color: var(--blue);
     }
@@ -99,6 +101,7 @@
     #Golds {
       background-color: var(--blackw);
       border: #6b757d;
+      color: white;
     }
     
     .free {
@@ -144,7 +147,9 @@
       transition: all 0.3s ease;
       width: 100%;
     }
-    
+    .btn-a{
+      background-color: var(--black);
+    }
     .btn-b {
       background-color: var(--blue);
     }
