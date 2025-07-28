@@ -29,6 +29,114 @@
     .dropdown-menu {
       min-width: 160px;
     }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      height: 50px;
+      background: linear-gradient(to right, #ffa500, #2626bb);
+      color: white;
+      text-align: center;
+    }
+    
+    .nav-items {
+      display: flex;
+      gap: 30px;
+      font-weight: bold;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+    }
+    
+    .nav-itemss {
+      display: flex;
+      gap: 30px;
+      font-weight: bold;
+      justify-content: center;
+      padding: 10px 0;
+      background: #353535;
+      color: white;
+    }
+    
+    .nav-itemss div {
+      cursor: pointer;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .nav-itemss div:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .nav-items div {
+      cursor: pointer;
+      padding: 12px 10px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-items div:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-left: 20px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .fa-eye {
+      font-size: 18px;
+    }
+    
   </style>
 </head>
 <body>
@@ -111,7 +219,22 @@
       </div>
     </div>
   </div>
-  
+  <!-- ====================== -->
+   
+  <div class="top-bar">
+    <div class="nav-items">
+      <div class="build-tab active">BUILD</div>
+      <div class="publish-tab">PUBLISH</div>
+    </div>
+
+    <div class="actions ">
+      <i class="fa-solid fa-eye"></i>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
 
   <!-- Bootstrap Bundle -->
 <br>
