@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    document.addEventListener('click',function(){
-      const signup = document.getElementsByClassName('.sign-up');
-              window.location.href = "/page/login/index.html";
-    })
+    // document.addEventListener('click',function(){
+    //   const signup = document.getElementsByClassName('sign-up');
+    //           window.location.href = "/page/login/index.html";
+    // })
