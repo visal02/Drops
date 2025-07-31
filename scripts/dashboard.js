@@ -38,15 +38,12 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
       }
     }
 
-    // Create label key and add to projectData
     const labelKey = labelValue.toLowerCase().replace(/\s+/g, '-');
     projectData[labelKey] = [];
 
-    // Add to labels array
     const newLabel = { name: labelValue, color: labelColor, key: labelKey };
     labels.push(newLabel);
 
-    // Create new label element
     const newItem = document.createElement("li");
     newItem.innerHTML = `
       <div class="label-content d-flex justify-content-between align-items-center">
@@ -69,18 +66,13 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     const addBtnLi = Array.from(allLi).find(li => li.querySelector("button"));
     labelList.insertBefore(newItem, addBtnLi);
 
-    // Save to localStorage
     saveToLocalStorage();
 
-    // Clear modal and hide
     labelInput.value = "";
     const modal = bootstrap.Modal.getInstance(document.getElementById("labelModal"));
     modal.hide();
 
-    // Add click event to the new label
     newItem.querySelector("a").addEventListener("click", (e) => handleLabelClick(e, labelKey));
-    
-    // Add edit and delete event listeners
     newItem.querySelector(".edit-label").addEventListener("click", (e) => editLabel(e, newLabel));
     newItem.querySelector(".delete-label").addEventListener("click", (e) => deleteLabel(e, labelKey));
   }
@@ -88,7 +80,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
   function editLabel(event, label) {
     event.stopPropagation();
     
-    // Create modal for editing
     const editModal = document.createElement('div');
     editModal.className = 'modal fade';
     editModal.id = 'editLabelModal';
@@ -128,8 +119,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     
     const modal = new bootstrap.Modal(editModal);
     modal.show();
-    
-    // Handle save changes
     document.getElementById('saveEditLabel').addEventListener('click', () => {
       const newName = document.getElementById('editLabelName').value.trim();
       const newColor = document.getElementById('editLabelColor').value;
@@ -139,14 +128,12 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
         return;
       }
       
-      // Update label in labels array
       const labelIndex = labels.findIndex(l => l.key === label.key);
       if (labelIndex !== -1) {
         labels[labelIndex].name = newName;
         labels[labelIndex].color = newColor;
       }
       
-      // Update in projectData (change the key if name changed)
       if (label.name !== newName) {
         const newKey = newName.toLowerCase().replace(/\s+/g, '-');
         projectData[newKey] = projectData[label.key] || [];
@@ -154,7 +141,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
         labels[labelIndex].key = newKey;
       }
       
-      // Update the UI
       const labelElement = document.querySelector(`a[data-label="${label.key}"]`);
       if (labelElement) {
         if (label.name !== newName) {
@@ -169,7 +155,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
       editModal.remove();
     });
     
-    // Remove modal when closed
     editModal.addEventListener('hidden.bs.modal', () => {
       editModal.remove();
     });
@@ -179,13 +164,9 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     event.stopPropagation();
     
     if (confirm('Are you sure you want to delete this label? Projects will not be deleted.')) {
-      // Remove from labels array
       labels = labels.filter(label => label.key !== labelKey);
-      
-      // Remove from projectData (keep the projects under this label)
       delete projectData[labelKey];
       
-      // Remove from UI
       const labelItem = event.target.closest('li');
       if (labelItem) {
         labelItem.remove();
@@ -198,15 +179,11 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
   function handleLabelClick(event, labelKey) {
     event.preventDefault();
 
-    // Remove active class from all labels
     const labelList = document.getElementById("label-list");
     const allLabels = labelList.querySelectorAll("a");
     allLabels.forEach(label => label.classList.remove("active"));
-
-    // Add active class to clicked label
     event.target.closest("a").classList.add("active");
 
-    // Update dashboard content
     const contentArea = document.getElementById("content-area");
     const projects = projectData[labelKey] || [];
 
@@ -255,7 +232,7 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     labels.forEach(label => {
       const newItem = document.createElement("li");
       newItem.innerHTML = `
-        <div class="label-content d-flex justify-content-between align-items-center">
+        <div class="label-content">
           <a href="#" data-label="${label.key}">
             <i class="bi bi-tag-fill label-icon" style="color: ${label.color}"></i> 
             <span class="label-text">${label.name}</span>
@@ -272,7 +249,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
       `;
       labelList.insertBefore(newItem, addBtnLi);
       
-      // Add event listeners
       newItem.querySelector("a").addEventListener("click", (e) => handleLabelClick(e, label.key));
       newItem.querySelector(".edit-label").addEventListener("click", (e) => editLabel(e, label));
       newItem.querySelector(".delete-label").addEventListener("click", (e) => deleteLabel(e, label.key));
@@ -285,10 +261,8 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
 
-    // Load labels from localStorage
     loadLabelsFromStorage();
 
-    // Add click events to existing labels
     const labelList = document.getElementById("label-list");
     const allLabels = labelList.querySelectorAll("a");
     allLabels.forEach(label => {
@@ -298,7 +272,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
       }
     });
 
-    // Handle categories (Favorites, Archive, Trash)
     const categoryLinks = document.querySelectorAll(".sidebar ul:not(#label-list) a");
     categoryLinks.forEach(link => {
       const labelKey = link.getAttribute("data-label");
@@ -307,7 +280,6 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
       }
     });
 
-    // Mobile menu toggle
     if (mobileMenuBtn) {
       mobileMenuBtn.addEventListener("click", function () {
         sidebar.classList.toggle("active");
@@ -318,5 +290,13 @@ let projectData = JSON.parse(localStorage.getItem('projectData')) || {
     overlay.addEventListener("click", function () {
       sidebar.classList.remove("active");
       overlay.classList.remove("active");
+    });
+  });
+
+ document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
     });
   });
