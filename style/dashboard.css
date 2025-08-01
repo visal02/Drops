@@ -231,3 +231,23 @@
     transform: scale(1);
   }
 }
+
+.sidebar {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.maxtext{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  cursor: default;
+}
+.maxtext:hover{
+  background-color: #e0e0e0;
+}
