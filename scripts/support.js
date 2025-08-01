@@ -1,3 +1,14 @@
+ ScrollReveal({ 
+        // reset: true,
+        distance:'60px',
+        duration:2500,
+        delay:400
+       });
+
+       ScrollReveal().reveal('.main-title, .section-title', { delay: 500, origin:'left' });
+       ScrollReveal().reveal('.sec-01 .image', { delay: 600, origin:'bottom' });
+       ScrollReveal().reveal('.text-box', { delay: 700, origin:'right' });
+
 document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('supportForm');
       const editor = document.getElementById('editor');

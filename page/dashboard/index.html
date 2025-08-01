@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/style/navbar.css">
 </head>
 <body>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
@@ -23,28 +22,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/page/templates/index.html">Templates</a></li>
+        <li class="nav-item"><a class="nav-link" href="/page/templates/index.html">Templates</a></li>
         <li class="nav-item"><a class="nav-link" href="/page/support/index.html">Support</a></li>
         <li class="nav-item"><a class="nav-link" href="/page/price/index.html">Pricing</a></li>
-       
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Main Layout -->
 <div class="d-flex" style="height: calc(100% - 60px);">
-  <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <a href="/page/create/index.html">
-      <button class="btn btn-danger w-100 btn-create">
+      <button class="btn btn-danger w-100 btn-create text-nowrap">
         <i class="bi bi-plus-lg"></i> CREATE NEW
       </button>
     </a>
 
     <h6><i class="bi bi-folder"></i> My Workspace</h6>
     <ul class="list-unstyled" id="label-list">
-      <li><a href="#" class="active"><i class="bi bi-folder2-open"></i> All Projects</a></li>
+      <li><a href="#" class="active" data-label="all"><i class="bi bi-folder2-open"></i> All Projects</a></li>
       <li>
         <button class="btn btn-outline-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#labelModal">
           <i class="bi bi-tag"></i> Add Label
@@ -55,32 +51,29 @@
     <hr />
     <h6><i class="bi bi-collection"></i> Categories</h6>
     <ul class="list-unstyled">
-       <li><a href="#"><i class="bi bi-star-fill"></i> Favorites</a></li>
-      <li><a href="#"><i class="bi bi-archive"></i></i> Archive</a></li>
-      <li><a href="#"><i class="bi bi-trash"></i></i></i> Trash</a></li>
+      <li><a href="#" data-label="favorites"><i class="bi bi-star-fill"></i> Favorites</a></li>
+      <li><a href="#" data-label="archive"><i class="bi bi-archive"></i> Archive</a></li>
+      <li><a href="#" data-label="trash"><i class="bi bi-trash"></i> Trash</a></li>
     </ul>
   </div>
 
-  <!-- Overlay -->
   <div class="overlay" id="overlay"></div>
-
-  <!-- Content -->
-  <div class="content">
+  <div class="content" id="dashboard-content">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h4 class="mb-0">Dashboard</h4>
-      <input type="search" class="form-control search-box" placeholder="🔍 Search..." />
     </div>
-    <div class="welcome-container">
-      <h2>Welcome to GenZDiv! 🎨</h2>
-      <p>Start with a template or create from scratch. Unleash your creativity with our powerful design tools.</p>
-      <button class="btn btn-danger btn-lg px-4">
-        <i class="bi bi-lightning-charge-fill"></i> Quick Start
-      </button>
+    <div id="content-area">
+      <div class="welcome-container">
+        <h2>Welcome to GenZDiv! 🎨</h2>
+        <p>Start with a template or create from scratch. Unleash your creativity with our powerful design tools.</p>
+        <button class="btn btn-danger btn-lg px-4">
+          <i class="bi bi-lightning-charge-fill"></i> Quick Start
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="labelModal" tabindex="-1" aria-labelledby="labelModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -112,8 +105,6 @@
     </div>
   </div>
 </div>
-
-
 <script src="/scripts/dashboard.js"></script>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
