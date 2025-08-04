@@ -1,15 +1,11 @@
- // Tab switching
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', function() {
-    // Remove active class from all tabs
     document.querySelectorAll('.nav-item').forEach(tab => {
       tab.classList.remove('active');
     });
     
-    // Add active to clicked tab
     this.classList.add('active');
     
-    // Toggle views
     if (this.textContent === 'PUBLISH') {
       document.getElementById('publishSection').classList.remove('d-none');
       document.querySelector('.form-area').classList.add('d-none');
@@ -23,10 +19,8 @@ document.querySelectorAll('.nav-item').forEach(item => {
             let draggedItem = null;
             let elementCounter = 0;
             
-            // Initialize tooltips
             $('[data-bs-toggle="tooltip"]').tooltip();
             
-            // Add event listeners for drag and drop
             $('#fieldList .field-item').on('dragstart', function(e) {
                 draggedItem = this;
                 e.originalEvent.dataTransfer.setData('text/plain', $(this).data('type'));
@@ -49,8 +43,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 
                 if (draggedItem) {
                     addFormElement($(draggedItem).data('type'));
-                    
-                    // Remove empty message if it exists
                     const emptyMsg = $('#formElements .empty-message');
                     if (emptyMsg.length) {
                         emptyMsg.remove();
@@ -58,7 +50,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 }
             });
 
-            // Make form elements draggable
             $('#formElements').on('dragstart', '.form-element', function(e) {
                 draggedItem = this;
                 e.originalEvent.dataTransfer.setData('text/plain', 'reorder');
@@ -71,7 +62,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 e.preventDefault();
                 e.originalEvent.dataTransfer.dropEffect = 'move';
                 
-                // Only handle if we're dragging a form element
                 if (!draggedItem || !$(draggedItem).hasClass('form-element')) return;
                 
                 const afterElement = getDragAfterElement(this, e.clientY);
@@ -96,7 +86,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 }, { offset: Number.NEGATIVE_INFINITY }).element;
             }
             
-            // Add form element to the form area
             function addFormElement(type) {
                 elementCounter++;
                 const id = `${type}-${Date.now()}-${elementCounter}`;
@@ -477,10 +466,7 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 
                 $('#formElements').append(elementDiv);
                 
-                // Initialize tooltips for this element
                 elementDiv.find('[data-bs-toggle="tooltip"]').tooltip();
-                
-                // Add event handlers for the new element
                 elementDiv.on('click', '.settings-btn', function(e) {
                     e.stopPropagation();
                     elementDiv.toggleClass('settings-open');
@@ -490,14 +476,12 @@ document.querySelectorAll('.nav-item').forEach(item => {
                     e.stopPropagation();
                     if (confirm('Are you sure you want to delete this element?')) {
                         elementDiv.remove();
-                        // Show empty message if no elements left
                         if ($('#formElements .form-element').length === 0) {
                             $('#formElements').html('<p class="empty-message">Your form is empty. Add elements by dragging them from the sidebar.</p>');
                         }
                     }
                 });
                 
-                // Add option buttons
                 elementDiv.on('click', '.add-option', function(e) {
                     e.stopPropagation();
                     const optionList = $(this).prev('.option-list');
@@ -509,8 +493,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                         </div>
                     `);
                     optionList.append(newOption);
-                    
-                    // Add remove handler for the new option
                     newOption.find('.remove-option').on('click', function() {
                         if (optionList.find('.option-item').length > 1) {
                             $(this).closest('.option-item').remove();
@@ -519,8 +501,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                         }
                     });
                 });
-                
-                // Add remove handlers for existing options
                 elementDiv.find('.remove-option').on('click', function(e) {
                     e.stopPropagation();
                     const optionList = $(this).closest('.option-list');
@@ -531,7 +511,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                     }
                 });
                 
-                // Update preview when settings change
                 elementDiv.on('change input', '[data-setting]', function(e) {
                     e.stopPropagation();
                     updatePreview(elementDiv);
@@ -540,14 +519,12 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 updatePreview(elementDiv);
             }
             
-            // Helper function to convert type to label
             function typeToLabel(type) {
                 return type.split('-').map(word => 
                     word.charAt(0).toUpperCase() + word.slice(1)
                 ).join(' ');
             }
             
-            // Update preview when settings change
             function updatePreview(elementDiv) {
                 const type = elementDiv.data('type');
                 const id = elementDiv.data('id');
@@ -562,8 +539,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                 elementDiv.find('[data-option]').each(function() {
                     options.push($(this).val());
                 });
-                
-                // Update the preview based on settings
                 switch(type) {
                     case 'text':
                     case 'textarea':
@@ -596,7 +571,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                         
                         if (tooltipTrigger.length && settings.helpText) {
                             tooltipTrigger.attr('title', settings.helpText);
-                            // Update the tooltip instance if it exists
                             const tooltipInstance = bootstrap.Tooltip.getInstance(tooltipTrigger[0]);
                             if (tooltipInstance) {
                                 tooltipInstance.setContent({ '.tooltip-inner': settings.helpText });
@@ -605,7 +579,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                             }
                         }
                         
-                        // Toggle help button visibility based on whether help text exists
                         if (helpButton.length) {
                             helpButton.css('display', settings.helpText ? 'inline-block' : 'none');
                         }
@@ -644,7 +617,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
 
                         if (tooltipTriggerr.length && settings.helpText) {
                             tooltipTriggerr.attr('title', settings.helpText);
-                            // Update the tooltip instance if it exists
                             const tooltipInstancee = bootstrap.Tooltip.getInstance(tooltipTriggerr[0]);
                             if (tooltipInstancee) {
                                 tooltipInstancee.setContent({ '.tooltip-inner': settings.helpText });
@@ -653,7 +625,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                             }
                         }
                         
-                        // Toggle help button visibility based on whether help text exists
                         if (helpButtonn.length) {
                             helpButtonn.css('display', settings.helpText ? 'inline-block' : 'none');
                         }
@@ -686,7 +657,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
 
                         if (tooltipTriggerrr.length && settings.helpText) {
                             tooltipTriggerrr.attr('title', settings.helpText);
-                            // Update the tooltip instance if it exists
                             const tooltipInstanceee = bootstrap.Tooltip.getInstance(tooltipTriggerrr[0]);
                             if (tooltipInstanceee) {
                                 tooltipInstanceee.setContent({ '.tooltip-inner': settings.helpText });
@@ -694,8 +664,6 @@ document.querySelectorAll('.nav-item').forEach(item => {
                                 new bootstrap.Tooltip(tooltipTriggerrr[0]);
                             }
                         }
-                        
-                        // Toggle help button visibility based on whether help text exists
                         if (helpButtonnn.length) {
                             helpButtonnn.css('display', settings.helpText ? 'inline-block' : 'none');
                         }
@@ -741,40 +709,24 @@ document.querySelectorAll('.nav-item').forEach(item => {
             
             // Save form
             $('#saveBtn').on('click', function() {
-                const formData = {
-                    elements: [],
-                    createdAt: new Date().toISOString()
-                };
-                
-                $('.form-element').each(function() {
-                    const element = $(this);
-                    const type = element.data('type');
-                    const id = element.data('id');
-                    const elementData = {
-                        type: type,
-                        id: id,
-                        settings: {},
-                        options: [],
-                        roles: []
+                const formName = prompt("Enter a name for your form:");
+                if (formName) {
+                    const formId = 'form-' + Date.now();
+                    const formConfig = {
+                        id: formId,
+                        name: formName,
+                        fields: formFields,
+                        html: $("#formArea").html(),
+                        createdAt: new Date().toISOString()
                     };
                     
-                    element.find('[data-setting]').each(function() {
-                        const input = $(this);
-                        elementData.settings[input.data('setting')] = input.is(':checkbox') ? input.prop('checked') : input.val();
-                    });
+                    // Save to localStorage
+                    let savedForms = JSON.parse(localStorage.getItem('savedForms'));
+                    savedForms.push(formConfig);
+                    localStorage.setItem('savedForms', JSON.stringify(savedForms));
                     
-                    element.find('[data-option]').each(function() {
-                        elementData.options.push($(this).val());
-                    });
-
-                    element.find('[data-role]').each(function() {
-                        elementData.roles.push($(this).val());
-                    });
-
-                    formData.elements.push(elementData);
-                });
-                
-                console.log('Form data to save:', formData);
-                alert('Form data saved to console (check developer tools)');
+                    currentFormId = formId;
+                    alert("Form saved successfully!");
+                }
             });
         });

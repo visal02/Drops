@@ -1,208 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create a Form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Form</title>
 
-  <!-- Bootstrap & Font Awesome -->
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/style/create.css" />
-  <link rel="stylesheet" href="/style/navbar.css" />
-  <link rel="stylesheet" href="/style/form.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style/create.css" />
+    <link rel="stylesheet" href="/style/navbar.css" />
+    <link rel="stylesheet" href="/style/form.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+    >
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand fw-bold d-flex align-items-center text-primary"
+          href="/page/dashboard/index.html"
+        >
+          <img src="/src/image/TTG - Copy.png" alt="Logo" class="logo me-2" />
+          <span>GenZDiv</span>
+        </a>
 
-</head>
-<body>
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
- <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand fw-bold d-flex align-items-center text-primary" href="/page/dashboard/index.html">
-        <img src="/src/image/TTG - Copy.png" alt="Logo" class="logo me-2" />
-        <span>GenZDiv</span>
-      </a>
+        <!-- Navbar Menu -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto align-items-center gap-2">
+            <!-- Help Button -->
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-outline-primary d-flex align-items-center"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="fa-solid fa-circle-question me-2"></i>HELP
+              </button>
+            </li>
 
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navbar Menu -->
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto align-items-center gap-2">
-
-          <!-- Help Button -->
-          <li class="nav-item">
-            <button type="button" class="btn btn-outline-primary d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              <i class="fa-solid fa-circle-question me-2"></i>HELP
-            </button>
-          </li>
-
-          <!-- Profile Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="/src/icon/twitter-line.svg" alt="Profile" class="rounded-circle border profile-img" />
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
-              <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
-            </ul>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HELP Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content border-0 shadow">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-circle-info me-2"></i>How to Use the Form</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>
-            Use this interactive <strong>Drag & Drop Form</strong> to easily compose a formal request for assistance.
-            Simply drag elements such as <strong>Name, Address, Reason for Help, Supporting Documents, and Signature</strong> into the workspace.
-          </p>
-          <p>
-            You can <strong>edit fields</strong>, rearrange them, and preview your final letter before submission.
-          </p>
-          <hr>
-          <p><strong>This tool is perfect for:</strong></p>
-          <ul>
-            <li>Submitting requests to authorities or organizations</li>
-            <li>Applying for personal or financial aid</li>
-            <li>Reporting issues or requesting support</li>
+            <!-- Profile Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="/src/icon/twitter-line.svg"
+                  alt="Profile"
+                  class="rounded-circle border profile-img"
+                />
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-user me-2"></i>My Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fas fa-cog me-2"></i>Settings</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#"
+                    ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
           </ul>
-          <hr>
-          <p><strong>Instructions:</strong></p>
-          <ol>
-            <li>Drag elements from the sidebar into the letter area.</li>
-            <li>Click on any element to edit its content.</li>
-            <li>Use the preview button to review your letter.</li>
-            <li>Submit or download the letter when complete.</li>
-          </ol>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <i class="fa-solid fa-circle-info me-2"></i>How to Use the Form
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Use this interactive <strong>Drag & Drop Form</strong> to easily
+              compose a formal request for assistance. Simply drag elements such
+              as
+              <strong
+                >Name, Address, Reason for Help, Supporting Documents, and
+                Signature</strong
+              >
+              into the workspace.
+            </p>
+            <p>
+              You can <strong>edit fields</strong>, rearrange them, and preview
+              your final letter before submission.
+            </p>
+            <hr />
+            <p><strong>This tool is perfect for:</strong></p>
+            <ul>
+              <li>Submitting requests to authorities or organizations</li>
+              <li>Applying for personal or financial aid</li>
+              <li>Reporting issues or requesting support</li>
+            </ul>
+            <hr />
+            <p><strong>Instructions:</strong></p>
+            <ol>
+              <li>Drag elements from the sidebar into the letter area.</li>
+              <li>Click on any element to edit its content.</li>
+              <li>Use the preview button to review your letter.</li>
+              <li>Submit or download the letter when complete.</li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- ====================== -->
-   
     <div class="top-bar">
-    <div class="nav-items">
-      <div class="nav-item active">BUILD</div>
-      <div class="publish-tab">PUBLISH</div>
+      <div class="nav-items">
+        <div class="nav-item active">BUILD</div>
+        <div class="publish-tab">PUBLISH</div>
+      </div>
+
+      <div class="actions">
+        <label class="switch">
+          <input type="checkbox" id="responsiveToggle" />
+        </label>
+      </div>
     </div>
 
-    <div class="actions">
-      <!-- <i class="fa-solid fa-eye" id="previewToggle"></i> -->
-      <label class="switch">
-        <input type="checkbox" id="responsiveToggle" />
-        <!-- <span class="slider"></span> -->
-      </label>
-    </div>
-  </div>
-
-  <!-- Bootstrap Bundle -->
-<br>
-     <div class="container">
-    <div class="sidebar">
+    <br />
+    <div class="container">
+      <div class="sidebar">
         <h1>Drag and Drop</h1>
         <h2>Full-featured Form Editing</h2>
-        
+
         <h3>Input Fields</h3>
-      <ul class="field-list" id="fieldList">
-        <li class="field-item" draggable="true" data-type="text">
-          <i class="fas fa-font"></i> Text Field
-        </li>
-        <li class="field-item" draggable="true" data-type="textarea">
-          <i class="fas fa-align-left"></i> Text Area
-        </li>
-        <li class="field-item" draggable="true" data-type="number">
-          <i class="fas fa-hashtag"></i> Number
-        </li>
-        <li class="field-item" draggable="true" data-type="date">
-          <i class="far fa-calendar-alt"></i> Date
-        </li>
-        <li class="field-item" draggable="true" data-type="email">
-          <i class="fas fa-envelope"></i> Email
-        </li>
-        <li class="field-item" draggable="true" data-type="password">
-          <i class="fas fa-lock"></i> Password
-        </li>
-      </ul>
-      
-      <h3>Selection Fields</h3>
-      <ul class="field-list"  id="fieldList">
-        <li class="field-item" draggable="true" data-type="checkbox-group">
-          <i class="far fa-check-square"></i> Checkbox Group
-        </li>
-        <li class="field-item" draggable="true" data-type="radio-group">
-          <i class="far fa-dot-circle"></i> Radio Group
-        </li>
-        <li class="field-item" draggable="true" data-type="select">
-          <i class="fas fa-caret-down"></i> Dropdown
-        </li>
-      </ul>
-      
-      <h3>Other Elements</h3>
-      <ul class="field-list"  id="fieldList">
-        <li class="field-item" draggable="true" data-type="file">
-          <i class="fas fa-file-upload"></i> File Upload
-        </li>
-        <li class="field-item" draggable="true" data-type="button">
-          <i class="fas fa-hand-pointer"></i> Button
-        </li>
-        <li class="field-item" draggable="true" data-type="header">
-          <i class="fas fa-heading"></i> Header
-        </li>
-        <li class="field-item" draggable="true" data-type="paragraph">
-          <i class="fas fa-paragraph"></i> Paragraph
-        </li>
-      </ul>
-    </div>
-    
-    <div class="form-area">
+        <ul class="field-list" id="fieldList">
+          <li class="field-item" draggable="true" data-type="text">
+            <i class="fas fa-font"></i> Text Field
+          </li>
+          <li class="field-item" draggable="true" data-type="textarea">
+            <i class="fas fa-align-left"></i> Text Area
+          </li>
+          <li class="field-item" draggable="true" data-type="number">
+            <i class="fas fa-hashtag"></i> Number
+          </li>
+          <li class="field-item" draggable="true" data-type="date">
+            <i class="far fa-calendar-alt"></i> Date
+          </li>
+          <li class="field-item" draggable="true" data-type="email">
+            <i class="fas fa-envelope"></i> Email
+          </li>
+          <li class="field-item" draggable="true" data-type="password">
+            <i class="fas fa-lock"></i> Password
+          </li>
+        </ul>
+
+        <h3>Selection Fields</h3>
+        <ul class="field-list" id="fieldList">
+          <li class="field-item" draggable="true" data-type="checkbox-group">
+            <i class="far fa-check-square"></i> Checkbox Group
+          </li>
+          <li class="field-item" draggable="true" data-type="radio-group">
+            <i class="far fa-dot-circle"></i> Radio Group
+          </li>
+          <li class="field-item" draggable="true" data-type="select">
+            <i class="fas fa-caret-down"></i> Dropdown
+          </li>
+        </ul>
+
+        <h3>Other Elements</h3>
+        <ul class="field-list" id="fieldList">
+          <li class="field-item" draggable="true" data-type="file">
+            <i class="fas fa-file-upload"></i> File Upload
+          </li>
+          <li class="field-item" draggable="true" data-type="button">
+            <i class="fas fa-hand-pointer"></i> Button
+          </li>
+          <li class="field-item" draggable="true" data-type="header">
+            <i class="fas fa-heading"></i> Header
+          </li>
+          <li class="field-item" draggable="true" data-type="paragraph">
+            <i class="fas fa-paragraph"></i> Paragraph
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-area">
         <h1>Form Builder</h1>
         <h2>Drag elements from the sidebar to build your form</h2>
-        
-        <div class="drop-zone" id="dropZone">
-            <p><i class="fas fa-arrows-alt"></i> Drag form elements here to add them to your form</p>
-        </div>
-        
-        <div id="formElements">
-            <p class="empty-message">
-                <i class="far fa-folder-open"></i> Your form is empty. Add elements by dragging them from the sidebar.
-            </p>
-        </div>
-        
-        <div class="form-actions">
-            <button class="btn btn-secondary" id="previewBtn">
-                <i class="far fa-eye"></i> PREVIEW
-            </button>
-            <button class="btn btn-danger" id="clearBtn">
-                <i class="fas fa-trash-alt"></i> CLEAR FORM
-            </button>
-            <button class="btn btn-primary" id="saveBtn">
-                <i class="far fa-save"></i> SAVE FORM
-            </button>
-        </div>
-    </div>
-    
-</div>
 
-  <!-- Bootstrap Bundle -->
-  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/scripts/form.js"></script>
-</body>
+        <div class="drop-zone" id="dropZone">
+          <p>
+            <i class="fas fa-arrows-alt"></i> Drag form elements here to add
+            them to your form
+          </p>
+        </div>
+
+        <div id="formElements">
+          <p class="empty-message">
+            <i class="far fa-folder-open"></i> Your form is empty. Add elements
+            by dragging them from the sidebar.
+          </p>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-secondary" id="previewBtn">
+            <i class="far fa-eye"></i> PREVIEW
+          </button>
+          <button class="btn btn-danger" id="clearBtn">
+            <i class="fas fa-trash-alt"></i> CLEAR FORM
+          </button>
+          <button class="btn btn-info text-light fs-5" id="clearBtn">
+            <i class="fas fa-trash-alt"></i> Dashboard
+          </button>
+          <button class="btn btn-primary" id="saveBtn">
+            <i class="far fa-save"></i> SAVE FORM
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/form.js"></script>
+  </body>
 </html>
