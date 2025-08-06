@@ -325,7 +325,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.querySelectorAll(".sidebar a").forEach((link) => {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     document
       .querySelectorAll(".sidebar a")
       .forEach((l) => l.classList.remove("active"));
